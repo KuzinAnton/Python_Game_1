@@ -12,8 +12,12 @@ def run_game():
         #Отслеживание событий клавиатуры и мыши.
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
-
+                pygame.quit()
+                try:
+                    sys.exit()
+                except:
+                    print('Error in exit')
+                    return
         #Отображение последнего прорисованного экрана
         pygame.display.flip()
 
