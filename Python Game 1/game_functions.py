@@ -1,14 +1,19 @@
 import sys
 import pygame
 
-def check_events():
+def check_events(ship):
     #Отслеживание событий клавиатуры и мыши.
     for event in pygame.event.get():
        if event.type == pygame.QUIT:
             pygame.quit()
             #try:
             sys.exit(0)
-            exit
+       elif event.type == pygame.KEYDOWN:
+           if event.key == pygame.K_RIGHT:
+               ship.moving_right = True
+       elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                ship.moving_right = False
             #except:
            #     print('Error in exit')
             #    return
