@@ -16,14 +16,16 @@ def run_game():
     ship = Ship(screen,ai_settings)
     #Создание группы для хранения пуль
     bullets = pygame.sprite.Group()
-    #Создание пришельца
-    alien = Alien(ai_settings, screen)
+    #Создание флота пришельца
+    aliens = pygame.sprite.Group()
+
+    gf.create_fleet(ai_settings, screen, aliens)
     
     #Запуск основного цикла игры
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         gf.update_bullets(bullets)
-        gf.update_screen(ai_settings, screen, ship, alien, bullets)
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 run_game()
