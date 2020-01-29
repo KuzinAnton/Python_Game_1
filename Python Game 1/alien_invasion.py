@@ -1,7 +1,6 @@
 import pygame
 from settings import Settings
 from ship import Ship
-from alien import Alien
 
 import game_functions as gf
 
@@ -16,7 +15,7 @@ def run_game():
     ship = Ship(screen,ai_settings)
     #Создание группы для хранения пуль
     bullets = pygame.sprite.Group()
-    #Создание флота пришельца
+    #Создание группы для хранения флота пришельца
     aliens = pygame.sprite.Group()
 
     gf.create_fleet(ai_settings, screen, aliens)
