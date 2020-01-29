@@ -41,7 +41,7 @@ def check_events(ai_settings, screen, ship, bullets):
            #     print('Error in exit')
             #    return
 
-def update_screen(ai_settings, screen, ship, bullets):
+def update_screen(ai_settings, screen, ship, alien, bullets):
     """Обновляет изображение на экране и отображает новый экран."""
     #При каждом проходе цикла перерисовывается экран
     screen.fill(ai_settings.bg_color)
@@ -49,6 +49,7 @@ def update_screen(ai_settings, screen, ship, bullets):
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()
+    alien.blitme()
     #Отображение последнего прорисованного экрана
     pygame.display.flip()
 
