@@ -60,7 +60,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
     #Отображение последнего прорисованного экрана
     pygame.display.flip()
 
-def update_bullets(bullets):
+def update_bullets(aliens, bullets):
     """Обновляет позиции пуль и уничтожает старые пули"""
     #Обновление позиций пуль
     bullets.update()
@@ -70,6 +70,9 @@ def update_bullets(bullets):
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
     #print(len(bullets))
+    #Проверка попаданий в прешельцев.
+    #При обнаружении попадания удалить пулю и пришельца
+    collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
 def get_number_aliens_x(ai_settings, alien_width):
     """Вычисляет количество пришельцев в ряду"""
