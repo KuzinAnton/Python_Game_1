@@ -18,7 +18,7 @@ def run_game():
     #Создание группы для хранения флота пришельца
     aliens = pygame.sprite.Group()
 
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
     
     #Запуск основного цикла игры
     while True:
