@@ -1,8 +1,9 @@
 import pygame
 
-class Ship():
-    def __init__(self,screen,ai_settings):
+class Ship(pygame.sprite.Sprite):
+    def __init__(self,ai_settings,screen):
         """Инициализирует корабль и задает его начальную позицию"""
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
         #Загрузка изображения корабля и получение прямоугольника
